@@ -14,7 +14,9 @@ function App() {
         </main>
       </PetContextProvider>
       <footer>
-      <p>MIT license {new Date().getFullYear()}. Download <strong>free</strong> code from <a href='/'>Github repo</a>.</p>
+      <p>
+        MIT license {new Date().getFullYear()}. Download <strong>free</strong> code from 
+        <a href='https://github.com/johnclamy/minimal-full-stack-react-app'>Github repo</a>.</p>
       </footer>
     </div>
   );
