@@ -1,12 +1,20 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 
 import './_pages.css'
 
-export default function Landding () {
+export default function Landing () {
+  const history = useHistory()
+
   return (
     <div className='page-container'>
       <img src='/images/header-image.jpg' alt='Yorkshire Terrier header image' />
-      <button type='button'>sign in to view and add pets</button>
+      <button
+        type='button'
+        onClick={() => history.push('/signin')}
+      >
+        sign in to view and add pets
+      </button>
     </div>
   )
 }
