@@ -1,0 +1,23 @@
+.page-container {
+  background-color: rgb(255, 238, 246);
+}
+
+.page-container > img {
+  width: 100%;
+}
+
+.page-container > button {
+  margin: 2rem 0;
+  padding: 1.5rem 1rem;
+  border: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: white;
+  background-color: #e435e4;
+}
+
+.page-container > button:hover {
+  background-color: #e77de7;
+  color: black;
+}
