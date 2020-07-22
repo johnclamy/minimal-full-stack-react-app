@@ -8,7 +8,7 @@ export default function Landing () {
 
   return (
     <div className='page-container'>
-      <img src='/images/header-image.jpg' alt='Yorkshire Terrier header image' />
+      <img src='/images/header-image.jpg' alt='Yorkshire Terrier' />
       <button
         type='button'
         onClick={() => history.push('/signin')}
