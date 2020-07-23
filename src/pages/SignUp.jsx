@@ -97,7 +97,7 @@ export default function SignUp () {
             />
           </label>
 
-          { outputError && <div><p>{outputError.message}</p></div> }
+          { outputError && <div><p style={{color: 'red'}}>{outputError.message}</p></div> }
         </fieldset>
       </form>
     </div>

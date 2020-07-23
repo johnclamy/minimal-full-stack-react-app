@@ -73,6 +73,10 @@
 	font-size: 12px;
 }
 
+.form-container label {
+	text-transform: capitalize;
+}
+
 .form-container input[type=text],
 .form-container input[type=password],
 .form-container input[type=email] {
@@ -83,7 +87,6 @@
 	outline: none;
 	color: #F072A9;
   padding: 5px 8px 5px 8px;
-  text-transform: capitalize;
 	box-shadow: inset 1px 1px 4px #FFD5E7;
 	-moz-box-shadow: inset 1px 1px 4px #FFD5E7;
 	-webkit-box-shadow: inset 1px 1px 4px #FFD5E7;

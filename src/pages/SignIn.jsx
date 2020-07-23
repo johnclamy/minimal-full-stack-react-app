@@ -65,7 +65,7 @@ export default function SignIn () {
             />
           </label>
 
-          { outputError && <div><p>{outputError.message}</p></div> }
+          { outputError && <div><p style={{color: 'red'}}>{outputError.message}</p></div> }
         </fieldset>
       </form>
       <SignUpLink />
