@@ -8,12 +8,10 @@ import './_pages.css'
 export default function SignIn () {
   const history = useHistory()
   const { authentication } = useContext(FirebaseContext)
-  const { email, setEmail } = useState('')
-  const { password, setPassword } = useState('')
-  const { outputError, setOutputError } = useState(null)
+  const [ email, setEmail ] = useState('')
+  const [ password, setPassword ] = useState('')
+  const [ outputError, setOutputError ] = useState(null)
 
-  const handleEmailChange = e => setEmail(e.target.value)
-  const handlePasswordChange = e => setPassword(e.target.value)
   const handleInputErrors = () => password === '' || email === ''
   const handleSubmit = e => {
     e.preventDefault()
@@ -36,27 +34,25 @@ export default function SignIn () {
         <fieldset>
           <legend>sign in</legend>
 
-          <label htmlFor='email'>
+          <label>
             <span>email <span className='required'>*</span></span>
             <input
               required
               type='email'
-              name='email'
               value={email}
               className='input-field'
-              onChange={handleEmailChange}
+              onChange={e => setEmail(e.target.value)}
             />
           </label>
 
-          <label htmlFor='password'>
+          <label>
             <span>password <span className='required'>*</span></span>
             <input
               required
               type='password'
-              name='password'
               value={password}
               className='input-field'
-              onChange={handlePasswordChange}
+              onChange={e => setPassword(e.target.value)}
             />
           </label>
           

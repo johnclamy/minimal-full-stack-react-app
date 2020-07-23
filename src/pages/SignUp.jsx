@@ -7,16 +7,12 @@ import './_pages.css'
 export default function SignUp () {
   const history = useHistory()
   const { authentication } = useContext(FirebaseContext)
-  const { username, setUserName } = useState('')
-  const { email, setEmail } = useState('')
-  const { passwordOne, setPasswordOne } = useState('')
-  const { passwordTwo, setPasswordTwo } = useState('')
-  const { outputError, setOutputError } = useState(null)
+  const [ username, setUserName ] = useState('')
+  const [ email, setEmail ] = useState('')
+  const [ passwordOne, setPasswordOne ] = useState('')
+  const [ passwordTwo, setPasswordTwo ] = useState('')
+  const [ outputError, setOutputError ] = useState(null)
 
-  const handleUserNameChange = e => setUserName(e.target.value)
-  const handleEmailChange = e => setEmail(e.target.value)
-  const handlePasswordOneChange = e => setPasswordOne(e.target.value)
-  const handlePasswordTwoChange = e => setPasswordTwo(e.target.value)
   const handleInputErrors = () => {
     return (
       passwordOne !== passwordTwo ||
@@ -47,51 +43,48 @@ export default function SignUp () {
       <form onSubmit={handleSubmit}>
         <fieldset>
           <legend>sign up</legend>
-          <label htmlFor='username'>
+
+          <label>
             <span>name <span className='required'>*</span></span>
             <input
               required
               type='text'
-              name='username'
               value={username}
               className='input-field'
-              onChange={handleUserNameChange}
+              onChange={e => setUserName(e.target.value)}
             />
           </label>
 
-          <label htmlFor='email'>
+          <label>
             <span>email <span className='required'>*</span></span>
             <input
               required
               type='email'
-              name='email'
               value={email}
               className='input-field'
-              onChange={handleEmailChange}
+              onChange={e => setEmail(e.target.value)}
             />
           </label>
 
-          <label htmlFor='password-one'>
+          <label>
             <span>password <span className='required'>*</span></span>
             <input
               required
               type='password'
-              name='password-one'
               value={passwordOne}
               className='input-field'
-              onChange={handlePasswordOneChange}
+              onChange={e => setPasswordOne(e.target.value)}
             />
           </label>
 
-          <label htmlFor='password-two'>
+          <label>
             <span>password 2 <span className='required'>*</span></span>
             <input
               required
               type='password'
-              name='password-two'
               value={passwordTwo}
               className='input-field'
-              onChange={handlePasswordTwoChange}
+              onChange={e => setPasswordTwo(e.target.value)}
             />
           </label>
           
