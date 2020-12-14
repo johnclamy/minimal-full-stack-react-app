@@ -1,38 +1,27 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import React from 'react'
+import { withStyles } from '@material-ui/core/styles'
+import Paper from '@material-ui/core/Paper'
+import Grid from '@material-ui/core/Grid'
 
-import PetContextProvider from './contexts/PetContext'
-import Navigation from './components/Navigation'
-import Header from './components/Header'
-import Footer from './components/Footer'
+const styles = theme => ({
+  root: {
+    flexGrow: 1
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary
+  }
+})
 
-import LandingPage from './pages/Landing'
-import HomePage from './pages/Home'
-import SignUpPage from './pages/SignUp'
-import SignInPage from './pages/SignIn'
-import AddPetPage from './pages/AddPet'
-import AccountPage from './pages/Account'
+const App = withStyles (styles)(({ classes }) => (
+  <div className={classes.root}>
+    <Grid container spacing={4}>
+      <Grid item xs={12} sm={6} md={3}>
+        <Paper className={classes.paper}>Alaskan Klee Kai</Paper>
+      </Grid>
+    </Grid>
+  </div>
+))
 
-function App() {
-  return (
-    <Router>
-      <div className="App">
-        <Navigation />
-        <PetContextProvider>
-          <Header />
-          <Switch>
-            <Route exact path='/' component={LandingPage} />
-            <Route exact path='/home' component={HomePage} />
-            <Route exact path='/signup' component={SignUpPage} />
-            <Route exact path='/signin' component={SignInPage} />
-            <Route exact path='/add-pet' component={AddPetPage} />
-            <Route exact path='/account' component={AccountPage} />
-          </Switch>
-        </PetContextProvider>
-        <Footer />
-      </div>
-    </Router>
-  );
-}
-
-export default App;
+export default App
