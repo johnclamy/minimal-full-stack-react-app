@@ -1,25 +1,28 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
-import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
+import Card from '@material-ui/core/Card'
+import CardHeader from '@material-ui/core/CardHeader'
+import CardContent from '@material-ui/core/CardContent'
+import CardMedia from '@material-ui/core/CardMedia'
+import CardActions from '@material-ui/core/CardActions'
+import Button from '@material-ui/core/Button'
+import Typography from '@material-ui/core/Typography'
 
 const styles = theme => ({
-  root: {
-    flexGrow: 1
+  card: {
+    maxWidth: 322
   },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary
+  media: {
+    width: 322,
+    height: 322
   }
 })
 
 const App = withStyles (styles)(({ classes }) => (
   <div className={classes.root}>
     <Grid container spacing={4}>
-      <Grid item xs={12} sm={6} md={3}>
-        <Paper className={classes.paper}>Alaskan Klee Kai</Paper>
-      </Grid>
+      content goes here...
     </Grid>
   </div>
 ))
