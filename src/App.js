@@ -1,28 +1,17 @@
 import React from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
-import Card from '@material-ui/core/Card'
-import CardHeader from '@material-ui/core/CardHeader'
-import CardContent from '@material-ui/core/CardContent'
-import CardMedia from '@material-ui/core/CardMedia'
-import CardActions from '@material-ui/core/CardActions'
-import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
 
-const styles = theme => ({
-  card: {
-    maxWidth: 322
-  },
-  media: {
-    width: 322,
-    height: 322
-  }
-})
+import Navbar from './components/Navbar'
+import PetList from './components/PetList'
+
+const styles = () => ({ root: { flexGrow: 1 }})
 
 const App = withStyles (styles)(({ classes }) => (
   <div className={classes.root}>
+    <Navbar />
     <Grid container spacing={4}>
-      content goes here...
+      <PetList />        
     </Grid>
   </div>
 ))
