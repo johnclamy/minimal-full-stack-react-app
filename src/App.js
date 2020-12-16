@@ -1,19 +1,19 @@
 import React from 'react'
-import { withStyles } from '@material-ui/core/styles'
-import Grid from '@material-ui/core/Grid'
+import { makeStyles } from '@material-ui/core/styles'
 
 import Navbar from './components/Navbar'
 import PetList from './components/PetList'
+import PetForm from './components/PetForm'
 
-const styles = () => ({ root: { flexGrow: 1 }})
+const useStyles = makeStyles(() => ({ root: { flexGrow: 1 }}))
 
-const App = withStyles (styles)(({ classes }) => (
-  <div className={classes.root}>
-    <Navbar />
-    <Grid container spacing={4}>
-      <PetList />        
-    </Grid>
-  </div>
-))
-
-export default App
+export default function App () {
+  const classes = useStyles()
+  return (
+    <div className={classes.root}>
+      <Navbar />    
+      <PetList />
+      <PetForm />  
+    </div>
+  )
+}
