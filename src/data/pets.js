@@ -1,4 +1,4 @@
-const tinyPets = [
+const pets = [
   {
     id: 1,
     breed: 'Alaskan Klee Kai',
@@ -19,4 +19,4 @@ const tinyPets = [
   }
 ]
 
-export default tinyPets
+export default pets
