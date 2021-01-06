@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom'
 
 import Navigation from './components/Navigation'
+import Footer from './components/Footer'
 import LandingPage from './views/Landing'
 import HomePage from './views/Home'
 import SignUpPage from './views/SignUp'
@@ -26,6 +27,7 @@ export default function App () {
         <Route path={ROUTES.ADD_PET} component={AddPetPage} />
         <Route path={ROUTES.ACCOUNT} component={AccountPage} />
       </Switch>
+      <Footer />
     </Router>
   )
 }
