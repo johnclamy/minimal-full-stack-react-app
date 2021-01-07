@@ -1,64 +1,91 @@
-import React, { useState } from 'react'
+import React, { useContext, useState, useRef } from 'react'
+import { useHistory } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import Alert from 'react-bootstrap/Alert'
 
-export default function SignUpForm () {
-  const [userName, setUserName] = useState('')
-  const [email, setEmail] = useState('')
-  const [passwordOne, setPasswordOne] = useState('')
-  const [passwordTwo, setPasswordTwo] = useState('')
-  const [error, setError] = useState('')
-  const disabled =
-    passwordOne !== passwordTwo ||
-    passwordOne === '' ||
-    email === '' ||
-    userName === ''
+import { AuthContext } from '../contexts/AuthContext'
+import * as ROUTES from '../routes'
 
-  const handleSubmit = e => {}
+export default function SignUpForm () {
+  const { onSignUp } = useContext(AuthContext)
+  const userNameRef = useRef()
+  const emailRef = useRef()
+  const passwordOneRef = useRef()
+  const passwordTwoRef = useRef()
+  const history = useHistory()
+  const [error, setError] = useState('')
+  const [loading, setLoading] = useState(false)
+
+  const handleSubmit = async (e) => {
+    const userName = userNameRef.current.value
+    const email = emailRef.current.value
+    const passwordOne = passwordOneRef.current.value
+    const passwordTwo = passwordTwoRef.current.value
+    const invalid = passwordOne !== passwordTwo ||
+      passwordOne === '' ||
+      email === '' ||
+      userName === ''
+
+    e.preventDefault()
+    
+    if (invalid) {
+      return setError('Please check the data you entered is correct.')
+    }
+
+    try {
+      setError('')
+      setLoading(true)
+      await onSignUp(email, passwordOne)
+      history.push(ROUTES.HOME)
+    } catch {
+      setError('Failed to create an account.')
+    }
+    setLoading(false)
+  }
 
   return (
     <Form onSubmit={handleSubmit}>
-      <Form.Group>
+      <Form.Group id='username'>
         <Form.Label>User name</Form.Label>
         <Form.Control
           type="text"
-          value={userName}
+          ref={userNameRef}
           placeholder="Enter a user name..."
-          onChange={e => setUserName(e.target.value)}
+          required
         />
       </Form.Group>
 
-      <Form.Group>
+      <Form.Group id='email'>
         <Form.Label>Email</Form.Label>
         <Form.Control
           type="email"
-          value={email}
+          ref={emailRef}
           placeholder="Enter your email address..."
-          onChange={e => setEmail(e.target.value)}
+          required
         />
         <Form.Text className="text-muted">
           We'll never share your email with anyone else.
         </Form.Text>
       </Form.Group>
 
-      <Form.Group>
+      <Form.Group id='passwordOne'>
         <Form.Label>Password</Form.Label>
         <Form.Control
           type="password"
-          value={passwordOne}
+          ref={passwordOneRef}
           placeholder="Password..."
-          onChange={e => setPasswordOne(e.target.value)}
+          required
         />
       </Form.Group>
 
-      <Form.Group>
-      <Form.Label>Confirm Password</Form.Label>
+      <Form.Group id='passwordTwo'>
+      <Form.Label>Password Confirmation</Form.Label>
         <Form.Control
           type="password"
-          value={passwordTwo}
-          placeholder="Retype you password..."
-          onChange={e => setPasswordTwo(e.target.value)}
+          ref={passwordTwoRef}
+          placeholder="Confirm your password..."
+          required
         />
       </Form.Group>
 
@@ -66,14 +93,12 @@ export default function SignUpForm () {
         className='text-uppercase'
         type='submit'
         variant="primary"
-        disabled={disabled}
+        disabled={loading}
       >
         sign up 
       </Button>
-      {error &&
-      <Alert className='mt-3' variant='danger'>
-        {error.message}
-      </Alert>}
+
+      {error && <Alert className='mt-3 text-center' variant='danger'>{error}</Alert>}
     </Form>
   )
 }
