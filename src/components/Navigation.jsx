@@ -16,7 +16,16 @@ export default function Navigation () {
   return (
     <Navbar bg="light" expand="lg">
       <LinkContainer to={ROUTES.LANDING}>
-        <Navbar.Brand>Tiny Pups</Navbar.Brand>
+        <Navbar.Brand>
+          <img
+            alt="logo"
+            src="/img/logo.png"
+            width="30"
+            height="30"
+            className="d-line-block align-top"
+          />{'  '}
+          Tiny Pups
+        </Navbar.Brand>
       </LinkContainer>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
