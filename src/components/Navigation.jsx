@@ -9,7 +9,9 @@ import * as ROUTES from '../routes'
 
 export default function Navigation () {
   const { user } = useContext(AuthContext)
-  const navbar = !user ? <NavbarOut /> : <NavbarIn />
+  const navbar = !user ? <NavbarOut user={user} /> : <NavbarIn />
+
+  console.log(user)
 
   return (
     <Navbar bg="light" expand="lg">

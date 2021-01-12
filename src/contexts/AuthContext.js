@@ -26,6 +26,7 @@ export default function AuthContextProvider ({ children }) {
   return (
     <AuthContext.Provider value={{
       user,
+      onSetUser: setUser,
       onSignUp: signUp,
       onLogin: login,
       onLogOut: logOut

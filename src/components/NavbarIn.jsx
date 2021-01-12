@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-import AuthContext from '../contexts/AuthContext'
+import { AuthContext } from '../contexts/AuthContext'
 import * as ROUTES from '../routes'
 
 export default function Navigation () {
@@ -13,9 +13,9 @@ export default function Navigation () {
   const { onLogOut } = useContext(AuthContext)
   const history = useHistory()
 
-  const handleClick = async () => {
+  const handleClick = () => {
     try {   
-      await onLogOut()
+      onLogOut()
       setError('')
       history.push(ROUTES.LANDING)
     } catch {

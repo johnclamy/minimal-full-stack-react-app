@@ -1,4 +1,5 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import { LinkContainer } from 'react-router-bootstrap'
 import Nav from 'react-bootstrap/Nav'
 import Form from 'react-bootstrap/Form'
@@ -7,6 +8,8 @@ import Button from 'react-bootstrap/Button'
 import * as ROUTES from '../routes'
 
 export default function NavbarOut () {
+  const history = useHistory()
+
   return (
     <>
       <Nav className="mr-auto">
@@ -15,7 +18,12 @@ export default function NavbarOut () {
         </LinkContainer>
       </Nav>
       <Form inline>
-        <Button variant="outline-dark">Login</Button>
+        <Button
+          variant="outline-dark"
+          onClick={() => history.push(ROUTES.LOGIN)}
+        >
+          Login
+        </Button>
       </Form>
     </>
 
