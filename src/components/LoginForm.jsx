@@ -13,15 +13,15 @@ export default function LoginForm () {
   const passwordRef = useRef()
   const history = useHistory()
   const [error, setError] = useState('')
+  const [inputError, setInputError] = useState('')
   const [loading, setLoading] = useState(false)
 
   const handleSubmit = async (e) => {
     const email = emailRef.current.value
     const password = passwordRef.current.value
-    const invalid = email === '' || password === ''
 
-    if (invalid) {
-      return setError('Please check the data fields are not empty.')
+    if (email === '' || password === '') {
+      return setInputError('Please check the data fields are not empty.')
     }
 
     try {
@@ -64,12 +64,19 @@ export default function LoginForm () {
         variant="primary"
         disabled={loading}
       >
-        sign up 
+        login 
       </Button>
 
-      {error &&
+      {inputError &&
       <Alert
         className='mt-3 text-center'
+        variant='danger'
+      >
+        {inputError}
+      </Alert>}
+      {error &&
+      <Alert
+        className='mt-1 text-center'
         variant='danger'
       >
         {error}

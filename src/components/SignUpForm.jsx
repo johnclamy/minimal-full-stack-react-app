@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef } from 'react'
+import React, { useContext, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -8,23 +8,18 @@ import { AuthContext } from '../contexts/AuthContext'
 import * as ROUTES from '../routes'
 
 export default function SignUpForm () {
-  const { onSignUp } = useContext(AuthContext)
-  const userNameRef = useRef()
-  const emailRef = useRef()
-  const passwordOneRef = useRef()
-  const passwordTwoRef = useRef()
   const history = useHistory()
+  const { onSignUp } = useContext(AuthContext)
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [passwordOne, setPasswordOne] = useState('')
+  const [passwordTwo, setPasswordTwo] = useState('')
   const [error, setError] = useState('')
   const [inputError, setInputError] = useState('')
   const [loading, setLoading] = useState(false)
 
-  const userName = userNameRef.current.value
-  const email = emailRef.current.value
-  const passwordOne = passwordOneRef.current.value
-  const passwordTwo = passwordTwoRef.current.value 
-
   if (passwordOne === '' || passwordTwo === '' ||
-    email === '' || userName === '') {
+    email === '' || username === '') {
       setInputError('Please make sure no fields are left empty.')
     } else if (passwordOne !== passwordTwo) {
       setInputError('Please check the password entries match.')
@@ -36,6 +31,10 @@ export default function SignUpForm () {
       setError('')
       setLoading(true)
       await onSignUp(email, passwordOne)
+      setUsername('')
+      setEmail('')
+      setPasswordOne('')
+      setPasswordTwo('')
       history.push(ROUTES.HOME)
     } catch {
       setError('Failed to create an account.')
@@ -49,7 +48,7 @@ export default function SignUpForm () {
         <Form.Label>User name</Form.Label>
         <Form.Control
           type="text"
-          ref={userNameRef}
+          onChange={e => setUsername(e.target.value)}
           placeholder="Enter a user name..."
           required
         />
@@ -59,7 +58,7 @@ export default function SignUpForm () {
         <Form.Label>Email</Form.Label>
         <Form.Control
           type="email"
-          ref={emailRef}
+          onChange={e => setEmail(e.target.value)}
           placeholder="Enter your email address..."
           required
         />
@@ -72,7 +71,7 @@ export default function SignUpForm () {
         <Form.Label>Password</Form.Label>
         <Form.Control
           type="password"
-          ref={passwordOneRef}
+          onChange={e => setPasswordOne(e.target.value)}
           placeholder="Password..."
           required
         />
@@ -82,7 +81,7 @@ export default function SignUpForm () {
       <Form.Label>Password Confirmation</Form.Label>
         <Form.Control
           type="password"
-          ref={passwordTwoRef}
+          onChange={e => setPasswordTwo(e.target.value)}
           placeholder="Confirm your password..."
           required
         />

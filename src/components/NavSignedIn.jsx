@@ -13,9 +13,9 @@ export default function NavSignedIn () {
   const { onLogOut } = useContext(AuthContext)
   const history = useHistory()
 
-  const handleClick = () => {
+  const handleClick = async () => {
     try {   
-      onLogOut()
+      await onLogOut()
       setError('')
       history.push(ROUTES.LANDING)
     } catch {

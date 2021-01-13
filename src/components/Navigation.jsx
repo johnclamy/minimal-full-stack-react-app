@@ -3,15 +3,13 @@ import { LinkContainer } from 'react-router-bootstrap'
 import Navbar from 'react-bootstrap/Navbar'
 
 import { AuthContext } from '../contexts/AuthContext'
-import NavbarIn from './NavSignedIn'
-import NavbarOut from './NavSignedOut'
+import NavSignedIn from './NavSignedIn'
+import NavSignedOut from './NavSignedOut'
 import * as ROUTES from '../routes'
 
 export default function Navigation () {
   const { user } = useContext(AuthContext)
-  const navbar = !user ? <NavbarOut user={user} /> : <NavbarIn />
-
-  console.log(user)
+  const navbar = !user ? <NavSignedOut /> : <NavSignedIn />
 
   return (
     <Navbar bg="light" expand="lg">
