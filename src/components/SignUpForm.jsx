@@ -15,24 +15,23 @@ export default function SignUpForm () {
   const passwordTwoRef = useRef()
   const history = useHistory()
   const [error, setError] = useState('')
+  const [inputError, setInputError] = useState('')
   const [loading, setLoading] = useState(false)
 
-  const handleSubmit = async (e) => {
-    const userName = userNameRef.current.value
-    const email = emailRef.current.value
-    const passwordOne = passwordOneRef.current.value
-    const passwordTwo = passwordTwoRef.current.value
-    const invalid = passwordOne !== passwordTwo ||
-      passwordOne === '' ||
-      email === '' ||
-      userName === ''
+  const userName = userNameRef.current.value
+  const email = emailRef.current.value
+  const passwordOne = passwordOneRef.current.value
+  const passwordTwo = passwordTwoRef.current.value 
 
-    e.preventDefault()
-    
-    if (invalid) {
-      return setError('Please check the data you entered is correct.')
+  if (passwordOne === '' || passwordTwo === '' ||
+    email === '' || userName === '') {
+      setInputError('Please make sure no fields are left empty.')
+    } else if (passwordOne !== passwordTwo) {
+      setInputError('Please check the password entries match.')
     }
 
+  const handleSubmit = async (e) => {
+    e.preventDefault()
     try {
       setError('')
       setLoading(true)
@@ -97,8 +96,16 @@ export default function SignUpForm () {
       >
         sign up 
       </Button>
-
-      {error && <Alert className='mt-3 text-center' variant='danger'>{error}</Alert>}
+      {inputError &&
+        <Alert className='mt-3 text-center' variant='danger'>
+          {inputError}
+        </Alert>}
+      {error &&
+        <Alert 
+          className='mt-1 text-center text-uppercase font-weight-bold'
+          variant='danger'>
+          {error}
+        </Alert>}
     </Form>
   )
 }

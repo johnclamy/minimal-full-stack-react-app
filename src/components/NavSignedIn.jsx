@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button'
 import { AuthContext } from '../contexts/AuthContext'
 import * as ROUTES from '../routes'
 
-export default function Navigation () {
+export default function NavSignedIn () {
   const [error, setError] = useState('')
   const { onLogOut } = useContext(AuthContext)
   const history = useHistory()
@@ -39,9 +39,6 @@ export default function Navigation () {
           <Nav.Link>Account</Nav.Link>
         </LinkContainer>
 
-        <LinkContainer to={ROUTES.ADMIN}>
-          <Nav.Link>Admin</Nav.Link>
-        </LinkContainer>
       </Nav>
 
       <Form inline>

@@ -3,8 +3,8 @@ import { LinkContainer } from 'react-router-bootstrap'
 import Navbar from 'react-bootstrap/Navbar'
 
 import { AuthContext } from '../contexts/AuthContext'
-import NavbarIn from './NavbarIn'
-import NavbarOut from './NavbarOut'
+import NavbarIn from './NavSignedIn'
+import NavbarOut from './NavSignedOut'
 import * as ROUTES from '../routes'
 
 export default function Navigation () {
