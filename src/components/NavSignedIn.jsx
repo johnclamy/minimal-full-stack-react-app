@@ -31,11 +31,11 @@ export default function NavSignedIn () {
           <Nav.Link>Home</Nav.Link>
         </LinkContainer>
 
-        <LinkContainer to={ROUTES.ADD_PET}>
+        <LinkContainer to={ROUTES.PETS}>
           <Nav.Link>Pets</Nav.Link>
         </LinkContainer>
 
-        <LinkContainer to={ROUTES.ACCOUNT}>
+        <LinkContainer to={ROUTES.ABOUT}>
           <Nav.Link>About</Nav.Link>
         </LinkContainer>
 

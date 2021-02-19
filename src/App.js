@@ -11,8 +11,8 @@ import LandingPage from './views/Landing'
 import HomePage from './views/Home'
 import SignUpPage from './views/SignUp'
 import LoginPage from './views/Login'
-import AddPetPage from './views/AddPet'
-import AccountPage from './views/Account'
+import PetsPage from './views/Pets'
+import AboutPage from './views/About'
 import * as ROUTES from './routes'
 
 export default function App () {
@@ -24,8 +24,8 @@ export default function App () {
         <Route path={ROUTES.HOME} component={HomePage} />
         <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
         <Route path={ROUTES.LOGIN} component={LoginPage} />
-        <Route path={ROUTES.ADD_PET} component={AddPetPage} />
-        <Route path={ROUTES.ACCOUNT} component={AccountPage} />
+        <Route path={ROUTES.PETS} component={PetsPage} />
+        <Route path={ROUTES.ABOUT} component={AboutPage} />
       </Switch>
       <Footer />
     </Router>
