@@ -8,7 +8,7 @@ import * as ROUTES from '../routes'
 export default function Landing () {
   const header = (
     <Jumbotron>
-      <h1 className=' text-primary display-4'>Welcome to Tiny Pets!</h1>
+      <h1 className=' text-primary display-4'>Welcome to Tiny Pups!</h1>
       <p className='lead'>
         We like to collect images of <strong>miniature dog breeds.</strong><br />
         <span className=' text-primary'>Log in to our web app to share your pup pics.</span>
