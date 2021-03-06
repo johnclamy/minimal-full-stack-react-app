@@ -1,5 +1,11 @@
 import React from 'react'
 
+import Layout from './components/layout/Layout'
+
 export default function () {
-  return <div>testing the app component...</div>
+  return (
+    <Layout>
+      page content should go here...
+    </Layout>
+  )
 }
