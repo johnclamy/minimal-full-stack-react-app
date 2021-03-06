@@ -1,7 +1,0 @@
-export const LANDING = '/'
-export const HOME = '/home'
-export const LOGIN = '/login'
-export const PETS = '/pets'
-export const SIGN_UP = '/signup'
-export const ABOUT = '/about'
-export const PASSWORD_FORGET = '/pswrd-forget'
