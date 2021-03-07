@@ -4,7 +4,15 @@ import { Navbar, Nav } from 'react-bootstrap'
 export default function () {
   return (
     <Navbar bg="light" expand="md">
-      <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+      <Navbar.Brand>
+        <img
+          width='30'
+          height='30'
+          alt='Tiny Pups logo'
+          src='/img/logo.png'
+          className='s-inline-block align-top'
+        />{' '}Tiny Pups
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="float-md-right">
