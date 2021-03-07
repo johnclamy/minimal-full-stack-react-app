@@ -14,8 +14,8 @@ export default function () {
         />{' '}Tiny Pups
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="float-md-right">
+      <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">
+        <Nav>
           <Nav.Link href="#home">Home</Nav.Link>
           <Nav.Link href="#link">Pets</Nav.Link>
           <Nav.Link href="#link">About</Nav.Link>
