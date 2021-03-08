@@ -28,6 +28,7 @@ export default function () {
           <LinkContainer to={ROUTES.HOME}><Nav.Link>Home</Nav.Link></LinkContainer>
           <LinkContainer to={ROUTES.PETS}><Nav.Link>Pets</Nav.Link></LinkContainer>
           <LinkContainer to={ROUTES.ABOUT}><Nav.Link>About</Nav.Link></LinkContainer>
+          <LinkContainer to={ROUTES.SIGNIN}><Nav.Link>Sign In</Nav.Link></LinkContainer>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
