@@ -1,7 +1,12 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
 import { Button, Jumbotron } from 'react-bootstrap'
 
+import * as ROUTES from '../../routes'
+
 export default function () {
+  const history = useHistory()
+
   return (
     <Jumbotron>
       <h1 className='display-4'>Welcome to Tiny Pups!</h1>
@@ -10,7 +15,13 @@ export default function () {
         Feel free to add your <strong>tiny pup</strong> too.
       </p>
       <p>
-        <Button size='lg' variant='warning'>Sign In</Button>
+        <Button
+          size='lg'
+          variant='warning'
+          onClick={() => history.push(ROUTES.SIGNIN)}
+        >
+          Sign In
+        </Button>
       </p>
     </Jumbotron>
   )
