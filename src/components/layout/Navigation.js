@@ -8,7 +8,7 @@ export default function () {
   return (
     <Navbar 
       bg="light"
-      expand="md"
+      expand="lg"
       className='mb-3'
     >
       <LinkContainer to={ROUTES.LANDING}>  
