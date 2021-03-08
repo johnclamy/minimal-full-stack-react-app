@@ -1,7 +1,9 @@
 import React from 'react'
 
+import PageContainer from '../layout/PageContainer'
+
 export default function () {
   return (
-    <div>Home page for signed in users...</div>
+    <PageContainer>Home page for signed in users...</PageContainer>
   )
 }

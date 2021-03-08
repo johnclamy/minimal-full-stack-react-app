@@ -1,7 +1,9 @@
 import React from 'react'
 
+import PageContainer from '../layout/PageContainer'
+
 export default function () {
   return (
-    <div>About us page...</div>
+    <PageContainer>About us page...</PageContainer>
   )
 }

@@ -9,7 +9,7 @@ export default function () {
     <Navbar 
       bg="light"
       expand="lg"
-      className='mb-3'
+      className='mb-1'
     >
       <LinkContainer to={ROUTES.LANDING}>  
         <Navbar.Brand className="font-weight-bold text-muted">
