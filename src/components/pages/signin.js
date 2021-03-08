@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function () {
   return (
-    <div>Home page for signed in users...</div>
+    <div>Sign In page to log user in.</div>
   )
 }

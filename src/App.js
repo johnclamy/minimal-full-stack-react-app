@@ -6,6 +6,7 @@ import LandingPage from './components/pages/landing'
 import HomePage from './components/pages/home'
 import PetsPage from './components/pages/pets'
 import AboutPage from './components/pages/about'
+import SigninPage from './components/pages/signin'
 import * as ROUTES from './routes'
 
 export default function () {
@@ -16,6 +17,7 @@ export default function () {
         <Route path={ROUTES.HOME} component={HomePage} />
         <Route path={ROUTES.PETS} component={PetsPage} />
         <Route path={ROUTES.ABOUT} component={AboutPage} />
+        <Route path={ROUTES.SIGNIN} component={SigninPage} />
       </Switch>
     </Layout>
   )
