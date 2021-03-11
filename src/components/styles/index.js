@@ -11,9 +11,28 @@ const Row = styled.div`
   padding: 3rem 1rem;
 `
 
+const Hero = styled.section`
+  border: 1px solid #DCDCDC;
+  border-radius: 4px;
+  background-color: #DCDCDC;
+  padding: 2rem;
+`
+
+const HeroTitle = styled.h1`
+  font-weight: 700;
+  margin: 1.5rem 0;
+  font-size: 3rem;
+  color: black;
+`
+
+const HeroText = styled.p`
+  font-weight: 300;
+  font-size: 1.4rem;
+  color: #696969;
+`
+
 const Nav = styled.nav`
-  padding: 1rem;
-  margin-bottom: 1.5rem;
+  padding: 1rem 1rem 0 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,7 +40,6 @@ const Nav = styled.nav`
 
 const NavTitle = styled.h1`
   font-family: 'Flavors', cursive;
-  color: #FFD700;
 `
 
 const NavList = styled.ul`
@@ -36,6 +54,9 @@ const NavListItem = styled.li`
 export {
   Container,
   Row,
+  Hero,
+  HeroTitle,
+  HeroText,
   Nav,
   NavTitle,
   NavList,

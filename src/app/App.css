@@ -15,19 +15,23 @@ body {
 /* unvisited link */
 a:link {
   color: darkblue;
+  text-decoration: none;
 }
 
 /* visited link */
 a:visited {
   color: lightskyblue;
+  text-decoration: underline;
 }
 
 /* mouse over link */
 a:hover {
   color: hotpink;
+  text-decoration: none;
 }
 
 /* selected link */
 a:active {
   color: blue;
+  text-decoration: none;
 }
