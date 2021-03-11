@@ -13,9 +13,10 @@ import AboutPage from '../components/pages/About'
 import SigninPage from '../components/pages/Signin'
 import * as ROUTES from './index'
 
-export default function () {
+export default function ({ children }) {
   return (
     <Router>
+      {children}
       <Switch>
         <Route exact path={ROUTES.LANDING} component={LandingPage} />
         <Route path={ROUTES.HOME} component={HomePage} />

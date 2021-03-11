@@ -21,6 +21,7 @@ const Nav = styled.nav`
 
 const NavTitle = styled.h1`
   font-family: 'Flavors', cursive;
+  color: #FFD700;
 `
 
 const NavList = styled.ul`

@@ -11,7 +11,23 @@ body {
   color: darkslategray;
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
-/*
-h1 {
-  font-family: 'Flavors', cursive;
-}*/
+
+/* unvisited link */
+a:link {
+  color: darkblue;
+}
+
+/* visited link */
+a:visited {
+  color: lightskyblue;
+}
+
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}

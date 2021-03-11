@@ -7,9 +7,10 @@ import './App.css'
 
 export default function () {
   return (
-    <Layout>
-      <Navbar />
-      <Routes />
-    </Layout>
+    <Routes>
+      <Layout>
+        <Navbar />
+      </Layout>
+    </Routes>
   )
 }
