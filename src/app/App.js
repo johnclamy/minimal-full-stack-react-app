@@ -8,13 +8,13 @@ import './App.css'
 
 export default function () {
   return (
-    <div>
+    <>
       <Routes>
         <Layout>
           <Navbar />
         </Layout>
       </Routes>
       <Footer />
-    </div>
+    </>
   )
 }
