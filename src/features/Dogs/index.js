@@ -13,8 +13,7 @@ import {
   delDog
 } from './dogSlice'
 
-export default function () {
-  const dispatch = useDispatch()
+const DogList = () => {
   const dogs = useSelector(selectDogs)
   const dogList = dogs && !dogs.length
     ? <Alert>There are currently <strong>no</strong> pets on record.</Alert>
@@ -23,4 +22,8 @@ export default function () {
       </List>)
   
   return dogList
+}
+
+export default function () {
+  return DogList()  
 }
