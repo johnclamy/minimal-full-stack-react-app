@@ -39,7 +39,7 @@ const HeroButton = styled.button`
   background-image: linear-gradient(to bottom, #ffd89b, #19547b);
   border-radius: 28px;
   font-family: Arial;
-  color: #fafafa;
+  color: #D9D9D9;
   box-shadow: 6px 5px 24px #666666;
   font-size: 27px;
   padding: 19px; 
@@ -67,6 +67,16 @@ const NavListItem = styled.li`
   margin-right: 1rem;
 `
 
+const Footer = styled.footer`
+  padding: 2rem 1rem;
+  color: white;
+  text-align: center;
+  font-weight: lighter;
+  font-style: italic;
+  font-size: 0.8rem;
+  background-color: #2F4F4F;
+`
+
 export {
   Container,
   Row,
@@ -78,5 +88,6 @@ export {
   Nav,
   NavTitle,
   NavList,
-  NavListItem
+  NavListItem,
+  Footer
 }
