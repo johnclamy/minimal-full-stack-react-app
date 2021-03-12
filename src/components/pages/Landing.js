@@ -5,7 +5,9 @@ import {
   Row,
   Hero,
   HeroTitle,
-  HeroText
+  HeroText,
+  HeroButton,
+  Section
 } from '../styles'
 
 export default function () {
@@ -15,6 +17,9 @@ export default function () {
         <Hero>
           <HeroTitle>Welcome to Tiny Pups.</HeroTitle>
           <HeroText>Share your images of miniature puppies for all to see and comment.</HeroText>
+          <Section>
+            <HeroButton>Sign In to find out more...</HeroButton>
+          </Section>
         </Hero>
       </Row>
     </Container>

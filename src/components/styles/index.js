@@ -11,6 +11,10 @@ const Row = styled.div`
   padding: 3rem 1rem;
 `
 
+const Section = styled.section`
+  margin: 1.5rem 0;
+`
+
 const Hero = styled.section`
   border: 1px solid #DCDCDC;
   border-radius: 4px;
@@ -29,6 +33,18 @@ const HeroText = styled.p`
   font-weight: 300;
   font-size: 1.4rem;
   color: #696969;
+`
+
+const HeroButton = styled.button`
+  background-image: linear-gradient(to bottom, #ffd89b, #19547b);
+  border-radius: 28px;
+  font-family: Arial;
+  color: #fafafa;
+  box-shadow: 6px 5px 24px #666666;
+  font-size: 27px;
+  padding: 19px; 
+  text-decoration: none;
+  cursor: pointer;
 `
 
 const Nav = styled.nav`
@@ -54,9 +70,11 @@ const NavListItem = styled.li`
 export {
   Container,
   Row,
+  Section,
   Hero,
   HeroTitle,
   HeroText,
+  HeroButton,
   Nav,
   NavTitle,
   NavList,
