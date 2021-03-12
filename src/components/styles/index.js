@@ -45,6 +45,12 @@ const HeroButton = styled.button`
   padding: 19px; 
   text-decoration: none;
   cursor: pointer;
+
+  :hover {
+    background: #2079b0; 
+    background-image: linear-gradient(to bottom, #19547b, #ffd89b);
+    text-decoration: none;
+  }
 `
 
 const Nav = styled.nav`
