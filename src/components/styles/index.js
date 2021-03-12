@@ -37,7 +37,7 @@ const HeroText = styled.p`
 
 const HeroButton = styled.button`
   background-image: linear-gradient(to bottom, #ffd89b, #19547b);
-  border-radius: 28px;
+  border-radius: 8px;
   font-family: Arial;
   color: #D9D9D9;
   box-shadow: 6px 5px 24px #666666;
@@ -69,7 +69,7 @@ const NavListItem = styled.li`
 
 const Footer = styled.footer`
   padding: 2rem 1rem;
-  color: white;
+  color: #F8F8FF;
   text-align: center;
   font-weight: lighter;
   font-style: italic;
