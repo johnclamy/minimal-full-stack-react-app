@@ -1,5 +1,12 @@
 import React from 'react'
 
+import Dogs from '../../features/Dogs'
+import { Container, Row } from '../styles'
+
 export default function () {
-  return <div>Pups list page</div>
+  return (
+    <Container>
+      <Row><Dogs /></Row>
+    </Container>
+  )
 }

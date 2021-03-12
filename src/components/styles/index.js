@@ -7,12 +7,31 @@ const Container = styled.div`
   margin: 0 auto;
 `
 
+const Alert = styled.section`
+  border: 1px solid skyblue;
+  background-color: skyblue;
+  margin: 1.5rem 0;
+  padding: 2rem 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+`
+
 const Row = styled.div`
   padding: 3rem 1rem;
 `
 
 const Section = styled.section`
   margin: 1.5rem 0;
+`
+
+const List = styled.ul`
+  list-style: none;
+`
+
+const ListItem = styled.li`
+  margin: 1rem 0.5rem;
+  margin-bottom: 2px solid brown; 
 `
 
 const Hero = styled.section`
@@ -53,10 +72,8 @@ const HeroButton = styled.button`
   }
 
   :active { 
-    transform: scale(0.98); 
-    /* Scaling button to 0.98 to its original size */ 
-    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24); 
-    /* Lowering the shadow */ 
+    transform: scale(0.98);  
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
   }
 `
 
@@ -92,8 +109,11 @@ const Footer = styled.footer`
 
 export {
   Container,
+  Alert,
   Row,
   Section,
+  List,
+  ListItem,
   Hero,
   HeroTitle,
   HeroText,
