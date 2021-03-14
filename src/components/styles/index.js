@@ -97,6 +97,23 @@ const NavListItem = styled.li`
   margin-right: 1rem;
 `
 
+const Form = styled.form`
+ display: flex;
+ justify-content: center;
+ align-items: center;
+`
+
+const FormControl = styled.input`
+  margin-left: 2.5rem;
+  font-size: 18px;
+  font-size: max(18px, 1em);
+  font-family: inherit;
+  padding: 0.75em 0.5em;
+  background-color: #fff;
+  border: 2px solid #19547b;
+  border-radius: 4px;
+`
+
 const Footer = styled.footer`
   padding: 2rem 1rem;
   color: #F8F8FF;
@@ -114,6 +131,8 @@ export {
   Section,
   List,
   ListItem,
+  Form,
+  FormControl,
   Hero,
   HeroTitle,
   HeroText,
