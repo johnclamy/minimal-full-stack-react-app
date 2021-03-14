@@ -1,17 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import {
-  Alert,
-  List,
-  ListItem
-} from '../../components/styles'
-import {
-  selectDogs,
-  addDog,
-  editDog,
-  delDog
-} from './dogSlice'
+import { Alert, List, ListItem } from '../../components/styles'
+import { selectDogs, addDog, editDog, delDog } from './dogSlice'
 
 const DogList = () => {
   const dogs = useSelector(selectDogs)
@@ -24,6 +15,16 @@ const DogList = () => {
   return dogList
 }
 
+const DogForm = () => {
+  const [showAddForm, setShowAddForm] = useState(false)
+  return null
+}
+
 export default function () {
-  return DogList()  
+  return (
+    <>
+      <DogList />
+      <DogForm />
+    </>
+  )
 }
