@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useForm } from 'react-hook-form'
 
-import { Alert, List, ListItem } from '../../components/styles'
+import { Alert, List, ListItem, Form, FormControl } from '../../components/styles'
 import { selectDogs, addDog, editDog, delDog } from './dogSlice'
 
-const DogList = () => {
+export const DogList = () => {
   const dogs = useSelector(selectDogs)
   const dogList = dogs && !dogs.length
     ? <Alert>There are currently <strong>no</strong> pets on record.</Alert>
@@ -15,16 +16,18 @@ const DogList = () => {
   return dogList
 }
 
-const DogForm = () => {
-  const [showAddForm, setShowAddForm] = useState(false)
-  return null
-}
-
-export default function () {
-  return (
-    <>
-      <DogList />
-      <DogForm />
-    </>
+export const DogForm = () => {
+  const { register, handleSubmit, errors } = useForm()
+  const dogForm = (
+    <Form style={{paddingTop: '1rem'}}>
+      <label style={{fontSize: '1.4rem'}}>Dog breed</label>
+      <FormControl
+        type='text'
+        name='breed'
+        ref={register}
+        placeholder="Enter your dog's breed..."
+      />
+    </Form>
   )
+  return dogForm
 }
