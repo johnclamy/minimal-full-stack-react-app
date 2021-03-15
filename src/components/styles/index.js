@@ -25,6 +25,17 @@ const Section = styled.section`
   margin: 1.5rem 0;
 `
 
+const ErrorContainer = styled.section`
+  margin: 1rem;
+  padding: 1rem;
+  font-weight: normal;
+  font-size: 1.2rem;
+  text-align: center;
+  color: white;
+  background-color: #DD0000;
+  border: 1px solid #DD0000;
+`
+
 const List = styled.ul`
   list-style: none;
 `
@@ -54,6 +65,10 @@ const HeroText = styled.p`
   color: #696969;
 `
 
+const ButtonContainer = styled.div`
+  margin: 1.5rem 9rem;
+`
+
 const HeroButton = styled.button`
   background-image: linear-gradient(to bottom, #ffd89b, #19547b);
   border-radius: 8px;
@@ -77,6 +92,27 @@ const HeroButton = styled.button`
   }
 `
 
+const SubmitButton = styled.button`
+  border: none;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background-color: #4169E1;
+  min-height: 44px;
+  width: 8em;
+  padding: 0.45em 0.75em;
+  border-radius: 4px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+
+  :hover {
+    background-color: #0000CD;
+  }
+
+  @media screen and (-ms-high-contract: active) {
+    border: 2px solid currentColor;
+  }
+`
+
 const Nav = styled.nav`
   padding: 1rem 1rem 0 1rem;
   display: flex;
@@ -97,7 +133,7 @@ const NavListItem = styled.li`
   margin-right: 1rem;
 `
 
-const Form = styled.form`
+const FormGroup = styled.div`
  display: flex;
  justify-content: center;
  align-items: center;
@@ -127,16 +163,19 @@ const Footer = styled.footer`
 export {
   Container,
   Alert,
+  ErrorContainer,
   Row,
   Section,
   List,
   ListItem,
-  Form,
+  FormGroup,
   FormControl,
   Hero,
   HeroTitle,
   HeroText,
   HeroButton,
+  SubmitButton,
+  ButtonContainer,
   Nav,
   NavTitle,
   NavList,
